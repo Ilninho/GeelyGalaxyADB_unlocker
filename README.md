@@ -75,4 +75,8 @@ On Linux and macOS, test from **another client on the same network**: `nslookup 
 
 ## Credits and use
 
-Based on an idea by [Ruslan Spaceyard](https://www.drive2.ru/users/spaceyard/); see the [original project](https://gitverse.ru/spaceyard/GeelyGalaxy_ADB). Free noncommercial use under [LICENSE.md](LICENSE.md). If you would like to thank the authors, consider a small monthly donation to a charity instead.
+Based on an idea by [Ruslan Spaceyard](https://www.drive2.ru/users/spaceyard/); see the [original project](https://gitverse.ru/spaceyard/GeelyGalaxy_ADB). Free noncommercial use under [LICENSE.md](LICENSE.md).
+
+If you would like to thank Ruslan, message him on Drive2 or use the [donation link](https://pay.cloudtips.ru/p/6657a42a) he shared in his [original post](https://www.drive2.ru/l/736445467654638943/).
+
+If you would like to thank the author (me, Ilninho), please make a small monthly donation to a charity you like instead. I personally choose charities helping adults and animals, as I feel they receive the least attention.
