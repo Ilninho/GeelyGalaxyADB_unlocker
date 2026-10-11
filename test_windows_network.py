@@ -6,6 +6,18 @@ import windows_network
 
 
 class NetworkStateTests(unittest.TestCase):
+    def test_capture_preserves_static_dns_addresses(self):
+        result = '{"interface_index":17,"interface_guid":"{01234567-89ab-cdef-0123-456789abcdef}","nameserver":"9.9.9.9,1.1.1.1"}'
+        with patch.object(windows_network, "run_powershell", return_value=result):
+            state = windows_network.capture_dns(17)
+        self.assertEqual(state.static_ipv4_dns, ("9.9.9.9", "1.1.1.1"))
+
+    def test_capture_preserves_dhcp_dns_mode(self):
+        result = '{"interface_index":17,"interface_guid":"{01234567-89ab-cdef-0123-456789abcdef}","nameserver":""}'
+        with patch.object(windows_network, "run_powershell", return_value=result):
+            state = windows_network.capture_dns(17)
+        self.assertEqual(state.static_ipv4_dns, ())
+
     def test_restore_keeps_preexisting_static_dns_in_order(self):
         state = windows_network.NetworkState(17, "{01234567-89ab-cdef-0123-456789abcdef}", ("9.9.9.9", "1.1.1.1"))
         commands = []

@@ -14,12 +14,6 @@ VPS_HOST = "YOU_DOMAIN"
 REDIRECT_HOSTS = {
     "oneoss-ecu-mqtt.geely.com",
     "oneoss-ecu-mqtt.geely.com.",
-    "oneoss-ecu.geely.com",
-    "oneoss-ecu.geely.com.",
-    "emqx-mqtt-test.geely-test.com",
-    "emqx-mqtt-test.geely-test.com.",
-    "oneos-sit.geely-test.com",
-    "oneos-sit.geely-test.com.",
 }
 
 UPSTREAM_DNS = ("1.1.1.1", 53)
@@ -127,7 +121,7 @@ def close_firewall():
         capture_output=True
     )
 
-_HANDLER_ROUTINE = ctypes.WINFUNCTYPE(wintypes.BOOL, wintypes.DWORD)
+_HANDLER_ROUTINE = getattr(ctypes, "WINFUNCTYPE", ctypes.CFUNCTYPE)(wintypes.BOOL, wintypes.DWORD)
 _ctrl_handler_ref = None
 _cleanup_lock = threading.Lock()
 _cleanup_done = False
