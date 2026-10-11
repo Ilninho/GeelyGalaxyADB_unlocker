@@ -4,6 +4,23 @@ This repository is a local-broker implementation based on the verified
 `GeelyGalaxy_ADB` MQTT/DNS approach. The source and one-file build workflow
 exist, but **no Windows or on-car acceptance test has been completed**.
 
+## Origin and support
+
+This application develops the idea of [Ruslan Spaceyard](https://www.drive2.ru/users/spaceyard/).
+His [original GeelyGalaxy_ADB repository](https://gitverse.ru/spaceyard/GeelyGalaxy_ADB)
+contains the broker and client that inspired this local version. Credit for
+that original work belongs to Ruslan.
+
+This project is intended to be free for noncommercial use. If you would like
+to buy me or Spaceyard a beer, please consider a small monthly donation to a
+charity instead. It can cost less than a cup of coffee and helps people beyond
+this project. I recommend making it a recurring habit.
+
+The original repository does not state a software license. This repository
+includes its `broker.py` unchanged, so I cannot label the entire derivative
+project MIT, GPL, or another license without permission from its author.
+The noncommercial intention above does not grant rights to Ruslan's code.
+
 ## Intended local flow
 
 1. The Windows launcher starts Mobile Hotspot when it is not already on.
