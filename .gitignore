@@ -8,4 +8,5 @@ dist/
 *.key
 *.pfx
 *.p12
+tls/
 network-state.json

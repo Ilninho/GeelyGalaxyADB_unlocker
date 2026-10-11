@@ -1,6 +1,7 @@
 """Build a one-file executable with the dedicated project TLS certificate."""
 
 from pathlib import Path
+import ssl
 import subprocess
 import sys
 
@@ -11,6 +12,8 @@ def main() -> None:
     key = root / "tls" / "privkey.pem"
     if not cert.is_file() or not key.is_file():
         raise SystemExit("Put the dedicated project certificate and key in tls/ before building")
+    context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+    context.load_cert_chain(certfile=str(cert), keyfile=str(key))
     command = [
         sys.executable, "-m", "PyInstaller", "--noconfirm", "--clean", "--onefile",
         "--console", "--name", "GeelyGalaxyADBUnlocker",

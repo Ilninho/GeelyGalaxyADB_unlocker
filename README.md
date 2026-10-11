@@ -50,6 +50,13 @@ key. Renew the certificate and rebuild the executables before expiry. The DNS
 provider token grants control of the dedicated free name only and must stay
 outside the repository and release binaries.
 
+The current release certificate is for `geely-unlocker.dynv6.net`. It was
+issued by Let's Encrypt using DNS-01 with an RSA key and a chain to ISRG Root
+X1; it expires on 9 January 2027. The DNS token is kept outside the repository.
+The certificate and key are also excluded from Git. Renewal and rebuild are
+the maintainer's responsibility. Trust by the actual head unit remains to be
+verified on the car.
+
 Other options are a user-supplied trusted certificate (`--cert` and `--key`),
 or a local CA installed on the head unit before running this tool. A locally
 self-signed certificate alone does not establish trust on the car.
@@ -68,8 +75,9 @@ For one-file releases, set repository secrets `TLS_FULLCHAIN_B64` and
 certificate. Run the **Build standalone executables** workflow manually.
 Its artifacts include the Python runtime; end users do not install Python.
 Builds are made separately on Windows, Linux, and macOS. The certificate is
-never committed to this repository. The workflow has not yet been run with
-release secrets.
+never committed to this repository. A local macOS arm64 binary was built and
+its TLS handshake verified; the workflow has not yet been run with release
+secrets.
 
 ## Tests
 

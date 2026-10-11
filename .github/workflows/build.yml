@@ -46,6 +46,14 @@ jobs:
       - name: Build
         shell: bash
         run: python build.py
+      - name: Check standalone executable starts
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = Windows ]; then
+            ./dist/GeelyGalaxyADBUnlocker.exe --help
+          else
+            ./dist/GeelyGalaxyADBUnlocker --help
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: GeelyGalaxyADBUnlocker-${{ runner.os }}
