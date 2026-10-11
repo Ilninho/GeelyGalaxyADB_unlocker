@@ -11,15 +11,17 @@ His [original GeelyGalaxy_ADB repository](https://gitverse.ru/spaceyard/GeelyGal
 contains the broker and client that inspired this local version. Credit for
 that original work belongs to Ruslan.
 
-This project is intended to be free for noncommercial use. If you would like
+This project is free for noncommercial use under the terms in [LICENSE.md](LICENSE.md).
+If you would like
 to buy me or Spaceyard a beer, please consider a small monthly donation to a
 charity instead. It can cost less than a cup of coffee and helps people beyond
 this project. I recommend making it a recurring habit.
 
-The original repository does not state a software license. This repository
-includes its `broker.py` unchanged, so I cannot label the entire derivative
-project MIT, GPL, or another license without permission from its author.
-The noncommercial intention above does not grant rights to Ruslan's code.
+My original code is licensed under PolyForm Noncommercial 1.0.0. Ruslan granted
+permission to modify and distribute the parts derived from his code for
+noncommercial use; the original repository does not publish a general license.
+The PolyForm license does not claim ownership of his work. MIT and GPL permit
+commercial use, so neither would express this project's noncommercial terms.
 
 ## Intended local flow
 
