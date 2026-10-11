@@ -102,6 +102,12 @@ It contains a single x86-64 `GeelyGalaxyADBUnlocker.exe`; the Windows runner
 started it with `--help`. The Windows hotspot and on-car flow still require
 acceptance testing.
 
+The same release also provides [Linux x86-64](https://github.com/Ilninho/GeelyGalaxyADB_unlocker/releases/download/v0.1.0-preview/GeelyGalaxyADBUnlocker-Linux.zip)
+and [macOS arm64](https://github.com/Ilninho/GeelyGalaxyADB_unlocker/releases/download/v0.1.0-preview/GeelyGalaxyADBUnlocker-macOS.zip)
+archives. Each contains one executable. Run it with `--broker-only`; hotspot
+and DNS setup on those systems is manual. Both builds passed their CI tests
+and started with `--help` on their respective runners.
+
 ## Tests
 
 Run `python -m unittest discover -v`. These tests cover DNS routing and exact

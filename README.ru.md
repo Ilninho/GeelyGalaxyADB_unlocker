@@ -95,6 +95,12 @@ TLS-проверку. [Первая сборка GitHub Actions](https://github.
 запустился с `--help`. Работу точки доступа и подключение машины ещё нужно
 проверить на Windows и в автомобиле.
 
+В этом же релизе есть архивы для [Linux x86-64](https://github.com/Ilninho/GeelyGalaxyADB_unlocker/releases/download/v0.1.0-preview/GeelyGalaxyADBUnlocker-Linux.zip)
+и [macOS arm64](https://github.com/Ilninho/GeelyGalaxyADB_unlocker/releases/download/v0.1.0-preview/GeelyGalaxyADBUnlocker-macOS.zip).
+В каждом один исполняемый файл. Запускайте его с `--broker-only`; точку доступа
+и DNS на этих системах пока нужно настроить вручную. Обе сборки прошли тесты
+и запустились с `--help` на соответствующих сборщиках.
+
 ## Текущие проверки
 
 `python -m unittest discover -v` проверяет DNS-маршрутизацию и восстановление
