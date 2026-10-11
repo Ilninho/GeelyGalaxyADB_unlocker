@@ -64,8 +64,8 @@ DNS-01 с RSA-ключом и цепочкой до ISRG Root X1. Он дейс�
 запуск. На Linux/macOS пока используйте `--broker-only` с ручной настройкой
 Wi-Fi и DNS.
 
-Для выпуска одного файла задайте в GitHub секреты `TLS_FULLCHAIN_B64` и
-`TLS_PRIVATE_KEY_B64` — PEM-сертификат и ключ в кодировке base64. Затем
+Для выпуска одного файла задайте в GitHub секреты `TLS_FULLCHAIN_PEM` и
+`TLS_PRIVATE_KEY_PEM` — цепочку PEM-сертификата и ключ в формате PEM. Затем
 вручную запустите workflow **Build standalone executables**. Артефакты
 содержат Python внутри: пользователю ничего устанавливать не нужно. Windows,
 Linux и macOS собираются отдельно. Локальный macOS-файл собран и прошёл

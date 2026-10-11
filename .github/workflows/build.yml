@@ -26,19 +26,19 @@ jobs:
       - name: Restore dedicated certificate from repository secrets
         shell: bash
         env:
-          TLS_FULLCHAIN_B64: ${{ secrets.TLS_FULLCHAIN_B64 }}
-          TLS_PRIVATE_KEY_B64: ${{ secrets.TLS_PRIVATE_KEY_B64 }}
+          TLS_FULLCHAIN_PEM: ${{ secrets.TLS_FULLCHAIN_PEM }}
+          TLS_PRIVATE_KEY_PEM: ${{ secrets.TLS_PRIVATE_KEY_PEM }}
         run: |
           python - <<'PY'
-          import base64, os, pathlib
-          cert = os.environ.get('TLS_FULLCHAIN_B64', '')
-          key = os.environ.get('TLS_PRIVATE_KEY_B64', '')
+          import os, pathlib
+          cert = os.environ.get('TLS_FULLCHAIN_PEM', '')
+          key = os.environ.get('TLS_PRIVATE_KEY_PEM', '')
           if not cert or not key:
-              raise SystemExit('Set TLS_FULLCHAIN_B64 and TLS_PRIVATE_KEY_B64 repository secrets')
+              raise SystemExit('Set TLS_FULLCHAIN_PEM and TLS_PRIVATE_KEY_PEM repository secrets')
           dest = pathlib.Path('tls')
           dest.mkdir(exist_ok=True)
-          (dest / 'fullchain.pem').write_bytes(base64.b64decode(cert, validate=True))
-          (dest / 'privkey.pem').write_bytes(base64.b64decode(key, validate=True))
+          (dest / 'fullchain.pem').write_text(cert, encoding='ascii')
+          (dest / 'privkey.pem').write_text(key, encoding='ascii')
           PY
       - name: Run tests
         shell: bash

@@ -70,9 +70,10 @@ the Windows API refuses access, enable Mobile Hotspot in Settings first and
 run it again. Linux/macOS currently use `--broker-only` and require manual
 Wi-Fi/DNS configuration.
 
-For one-file releases, set repository secrets `TLS_FULLCHAIN_B64` and
-`TLS_PRIVATE_KEY_B64` to base64-encoded PEM data for a dedicated project
-certificate. Run the **Build standalone executables** workflow manually.
+For one-file releases, set repository secrets `TLS_FULLCHAIN_PEM` and
+`TLS_PRIVATE_KEY_PEM` to the PEM certificate chain and private key for a
+dedicated project certificate. Run the **Build standalone executables**
+workflow manually.
 Its artifacts include the Python runtime; end users do not install Python.
 Builds are made separately on Windows, Linux, and macOS. The certificate is
 never committed to this repository. A local macOS arm64 binary was built and
