@@ -90,8 +90,8 @@ Wi-Fi и DNS.
 содержат Python внутри: пользователю ничего устанавливать не нужно. Windows,
 Linux и macOS собираются отдельно. Локальный macOS-файл собран и прошёл
 TLS-проверку. [Первая сборка GitHub Actions](https://github.com/Ilninho/GeelyGalaxyADB_unlocker/actions/runs/38171781378)
-успешно завершилась на всех трёх платформах. [Артефакт Windows](https://github.com/Ilninho/GeelyGalaxyADB_unlocker/actions/runs/38171781378/artifacts/11714114597)
-содержит один 64-битный `GeelyGalaxyADBUnlocker.exe`; на Windows-сборщике он
+успешно завершилась на всех трёх платформах. Скачайте [ZIP для Windows из предварительного релиза](https://github.com/Ilninho/GeelyGalaxyADB_unlocker/releases/download/v0.1.0-preview/GeelyGalaxyADBUnlocker-Windows.zip).
+Внутри находится один 64-битный `GeelyGalaxyADBUnlocker.exe`; на Windows-сборщике он
 запустился с `--help`. Работу точки доступа и подключение машины ещё нужно
 проверить на Windows и в автомобиле.
 
