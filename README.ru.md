@@ -69,7 +69,11 @@ Wi-Fi и DNS.
 вручную запустите workflow **Build standalone executables**. Артефакты
 содержат Python внутри: пользователю ничего устанавливать не нужно. Windows,
 Linux и macOS собираются отдельно. Локальный macOS-файл собран и прошёл
-TLS-проверку; workflow с секретами выпуска пока не запускался.
+TLS-проверку. [Первая сборка GitHub Actions](https://github.com/Ilninho/GeelyGalaxyADB_unlocker/actions/runs/38171781378)
+успешно завершилась на всех трёх платформах. [Артефакт Windows](https://github.com/Ilninho/GeelyGalaxyADB_unlocker/actions/runs/38171781378/artifacts/11714114597)
+содержит один 64-битный `GeelyGalaxyADBUnlocker.exe`; на Windows-сборщике он
+запустился с `--help`. Работу точки доступа и подключение машины ещё нужно
+проверить на Windows и в автомобиле.
 
 ## Текущие проверки
 

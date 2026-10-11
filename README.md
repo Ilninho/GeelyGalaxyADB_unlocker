@@ -77,8 +77,11 @@ workflow manually.
 Its artifacts include the Python runtime; end users do not install Python.
 Builds are made separately on Windows, Linux, and macOS. The certificate is
 never committed to this repository. A local macOS arm64 binary was built and
-its TLS handshake verified; the workflow has not yet been run with release
-secrets.
+its TLS handshake verified. The first [GitHub Actions run](https://github.com/Ilninho/GeelyGalaxyADB_unlocker/actions/runs/38171781378)
+completed successfully on all three platforms. Its [Windows artifact](https://github.com/Ilninho/GeelyGalaxyADB_unlocker/actions/runs/38171781378/artifacts/11714114597)
+contains a single x86-64 `GeelyGalaxyADBUnlocker.exe`; the Windows runner
+started it with `--help`. The Windows hotspot and on-car flow still require
+acceptance testing.
 
 ## Tests
 
