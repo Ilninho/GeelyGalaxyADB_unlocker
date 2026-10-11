@@ -34,10 +34,10 @@ trusted by the car. The original VPS succeeded using a publicly trusted
 certificate. Therefore a self-signed local broker must first be tested on the
 actual head unit; its success is not established by a local TLS test.
 
-A dedicated free DNS name, for example one registered at DuckDNS, is the
-preferred release option. DuckDNS supports an ACME DNS-01 TXT record for a
-publicly trusted certificate. The DNS account/token is used only by the
-maintainer during issuance and renewal; it is never embedded in the executable
+A dedicated free DNS name, for example one registered at dynv6 with a
+separate project email address, is the preferred release option. dynv6
+supports DNS TXT records for an ACME DNS-01 challenge. The DNS account/token
+is used only by the maintainer during issuance and renewal; it is never embedded in the executable
 or given to end users. No DNS access to a personal domain is required. The
 maintainer supplies the PEM chain and key as GitHub Actions secrets, and the
 build embeds them in the executable. End users need no domain, token, Python
