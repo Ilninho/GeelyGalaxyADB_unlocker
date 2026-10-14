@@ -40,6 +40,17 @@ class NetworkStateTests(unittest.TestCase):
         self.assertEqual(len(commands), 1)
         self.assertIn("-ResetServerAddresses", commands[0])
 
+    def test_guid_accepted_with_or_without_braces(self):
+        for raw in ("{01234567-89AB-cdef-0123-456789abcdef}", "01234567-89ab-cdef-0123-456789abcdef"):
+            state = windows_network.NetworkState.from_dict(
+                {"interface_index": 17, "interface_guid": raw, "static_ipv4_dns": []})
+            self.assertEqual(state.interface_guid, "{01234567-89ab-cdef-0123-456789abcdef}")
+
+    def test_double_braced_guid_is_rejected(self):
+        with self.assertRaises(ValueError):
+            windows_network.NetworkState.from_dict(
+                {"interface_index": 17, "interface_guid": "{{01234567-89ab-cdef-0123-456789abcdef}}", "static_ipv4_dns": []})
+
     def test_snapshot_round_trip_preserves_mode_and_adapter_identity(self):
         state = windows_network.NetworkState(17, "{01234567-89ab-cdef-0123-456789abcdef}", ("9.9.9.9",))
         self.assertEqual(windows_network.NetworkState.from_dict(json.loads(json.dumps(state.to_dict()))), state)
